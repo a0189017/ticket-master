@@ -8,3 +8,5 @@ import (
 var SignalsToShutdown = []os.Signal{syscall.SIGQUIT, syscall.SIGINT, syscall.SIGTERM, os.Interrupt}
 
 const FieldDatabase = "database"
+
+const AccessToken = "access_token"

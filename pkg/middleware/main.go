@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"runtime"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
@@ -34,5 +35,13 @@ func SetDatabase(database *gorm.DB) gin.HandlerFunc {
 }
 
 func VerifyToken(c *gin.Context) {
+	authorization := c.Request.Header.Get("Authorization")
+	parts := strings.SplitN(authorization, " ", 2)
+	if len(parts) != 2 || parts[0] != "Bearer" {
+		c.JSON(http.StatusForbidden, "")
+		c.Abort()
+	}
+	token := parts[1]
+	c.Set(constants.AccessToken, token)
 
 }
