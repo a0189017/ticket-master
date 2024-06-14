@@ -10,3 +10,5 @@ var SignalsToShutdown = []os.Signal{syscall.SIGQUIT, syscall.SIGINT, syscall.SIG
 const FieldDatabase = "database"
 
 const AccessToken = "access_token"
+
+const StackTrace = "stack_trace"

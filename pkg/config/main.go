@@ -31,6 +31,7 @@ type DB struct {
 type Config struct {
 	Server Server `yaml:"server"`
 	DB     DB     `yaml:"db"`
+	Debug  bool   `env:"DEBUG" default:"true"`
 }
 
 func GetConfig() *Config {

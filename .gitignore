@@ -1,0 +1,10 @@
+.vscode/launch.json
+.DS_Store
+.tool-versions
+.vscode
+.dccache
+.vscode/*.log
+__debug_bin
+.devcontainer
+*.exe
+__debug_bin*
